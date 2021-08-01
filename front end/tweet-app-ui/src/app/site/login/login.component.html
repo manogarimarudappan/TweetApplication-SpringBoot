@@ -1,0 +1,59 @@
+<div class="container-fluid col-12 col-md-8 col-lg-5 mt-5 mb-5">
+    <ul class="list-group text-align-center">
+        <li class="list-group-item">
+            <form class="mt-3 ml-4 mr-4 mb-5" (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm">
+                <h1>Login</h1>
+                <div class="form-row">
+                    <div class="col-sm-12 col-lg-12">
+                        <div class="alert alert-info" role="alert" *ngIf="isInvalid">
+                            Invalid Username / Password
+                        </div>
+                        <div class="alert alert-success" role="alert" *ngIf="isLoggedIn">
+                            Logged In Successfully
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-sm-12 col-lg-12">
+                        <label for="loginId"></label>
+                        <input type="text" class="form-control" placeholder="Enter LoginId" id="loginId" ngModel
+                        name="loginId" #loginId="ngModel" required>
+                        <small class="form-text text-danger">
+                            <div *ngIf="loginId.touched && !loginId.valid">Username is required</div>
+                        </small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-sm-12 col-lg-12">
+                        <label for="password"></label>
+                        <input type="password" class="form-control" placeholder="Enter password" id="password" ngModel
+                        name="password" #username="ngModel" required>
+                        <small class="form-text text-danger">
+                            <div * ngIf="password.touched && !password.valid">Password is required</div>
+                        </small>
+                    </div>
+                </div>
+                <div class="form-row mt-2">
+                    <span class="text-align-left">
+                        <a class="signup" routerLink="/forget">Forget password ?</a>
+                    </span>
+                </div>
+
+                <div class="form-row mt-2">
+                    <span>
+                        <button type="submit" class="btn btn-danger text-align-left" [disabled]="!loginForm.valid">
+                            Login
+                        </button>
+                    </span>
+                    <span class = "ml-auto text-muted">New here?
+                        <a class="signup" routerLink="/signup">Signup</a>
+                    </span>
+
+                </div>
+
+            </form>
+        </li>
+
+    </ul>
+
+</div>

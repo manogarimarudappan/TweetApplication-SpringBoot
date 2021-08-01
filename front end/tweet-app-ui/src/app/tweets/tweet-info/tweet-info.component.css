@@ -1,0 +1,24 @@
+.icons{
+    vertical-align: middle;
+}
+
+.text{
+    font-weight: bold;
+    padding-left: 10px;
+    text-transform: capitalize;
+}
+
+.rightCards{
+    padding-left: 50px;
+}
+
+.buttonLeft{
+    padding-left: 50px;
+}
+
+.likecard{
+    padding-left: 45px;
+}
+.red{
+    color: #ff0000;
+}

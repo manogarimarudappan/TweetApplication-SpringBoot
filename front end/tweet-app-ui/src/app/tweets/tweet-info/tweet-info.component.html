@@ -1,0 +1,59 @@
+<div class="card cards">
+    <div class="card-body">
+        <div class="card-title"><i class="material-icons icons">
+                perm_identity
+            </i>
+            <span class="text">{{tweetList.loginId}}</span>
+
+        </div>
+        <hr>
+        <div>
+            {{tweetList.message}}
+        </div>
+        <hr>
+        <div>
+            <span><i class="material-icons icons">
+                    schedule
+                </i> {{postTime}}</span>
+            <span class="likecard"> <button class="material-icons icons red" (click)="like(tweetList.id)">
+                    favorite
+                </button> {{tweetList.like}}</span>
+        </div>
+        <hr>
+
+
+        <div>
+            <span>
+
+                <button class="btn btn-primary " type="button" (click)="viewReply(tweetList.id)" (click)="toggleShow()">
+                    View Reply
+                </button>
+            </span>
+            <span class="buttonLeft">
+                <button class="btn btn-primary" type="button" [routerLink]="['/reply',tweetList.id]">
+                    Post Reply
+                </button>
+            </span>
+            <div class="mt-3" *ngIf="isShown" id="divshow">
+                <div class="card card-body" *ngFor="let reply of replyList">
+                    <div class="card-title"><i class="material-icons icons">
+                            perm_identity
+                        </i>
+                        <span class="text">{{reply.loginId}}</span>
+                    </div>
+                    <hr>
+                    <div>
+                        {{reply.message}}
+                    </div>
+
+                </div>
+            </div>
+            <button class="btn btn-primary " *ngIf="isShown" type="button" (click)="toggleHide()">
+                Hide Reply
+            </button>
+        </div>
+
+
+    </div>
+
+</div>

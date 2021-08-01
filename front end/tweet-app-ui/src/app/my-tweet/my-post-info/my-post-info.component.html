@@ -1,0 +1,35 @@
+
+
+<div class="card cards">
+    <div class="card-body">
+        <div class="card-title"><i class="material-icons icons">
+                perm_identity
+            </i>
+            <span class="text">{{tweetList.loginId}}</span>
+            
+        </div>
+        <hr>
+        <div>
+            {{tweetList.message}}
+        </div>
+        <hr>
+        <div>
+            <span><i class="material-icons icons">
+                schedule
+            </i> {{postTime}}</span>
+        </div>
+        <hr>
+        <div>
+            <span class="ml-auto">
+                <a class="btn btn-primary" [routerLink]="['/edit',tweetList.id]">
+                <i class="material-icons icons">edit</i>Edit
+                </a>
+            </span>
+            <span class="leftcard">
+                <a class="btn btn-primary" (click)="deleteTweet(tweetList.id)">
+                <i class="material-icons icons">delete_forever</i> Delete
+                </a>
+            </span>
+        </div>
+    </div>
+</div>

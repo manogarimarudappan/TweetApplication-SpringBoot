@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="navLink" *ngIf="!getLoginStatus()" routerLink="login">TweetApp</div>
+    <div class="navLink" *ngIf="getLoginStatus()" routerLink="tweet">TweetApp</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarSupportContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navBarSupportContent">
+      <ul class="navbar-nav ml-auto mb-2">
+        
+        <li class="nav-item">
+          <a class="nav-link text" routerLink="signup" *ngIf="!getLoginStatus()">Signup</a></li>
+          <li class="nav-item">
+            <a class="nav-link text" routerLink="post" *ngIf="getLoginStatus()">Post</a></li>
+            <li class="nav-item">
+              <a class="nav-link text" routerLink="my-post" *ngIf="getLoginStatus()">My Post</a></li>
+            <li class="nav-item">
+            <a class="nav-link text" href="#" (click) ="logout()" *ngIf="getLoginStatus()">Logout</a></li>
+       
+      </ul>
+    </div>
+  </nav>
